@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestor Personal</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Gestor Personal</h1>
+  </header>
+
+  <main>
+    <div class="container">
+      <!-- Panel izquierdo para Notas -->
+      <div class="panel" id="notas-panel">
+        <div class="panel-header">
+          <h2>Notas</h2>
+        </div>
+        
+        <div class="panel-body">
+          <div class="filtro-categoria">
+            <select id="filtro-notas">
+              <option value="todas">Todas las notas</option>
+            </select>
+          </div>
+          
+          <div id="contenedor-notas" class="notas-container"></div>
+          
+          <button id="agregar-nota-btn" class="boton-agregar">
+            <span>+</span> Agregar Nota
+          </button>
+        </div>
+      </div>
+      
+      <!-- Panel derecho para Hábitos -->
+      <div class="panel" id="habitos-panel">
+        <div class="panel-header">
+          <h2>Hábitos</h2>
+        </div>
+        
+        <div class="panel-body">
+          <div id="lista-habitos" class="habitos-container"></div>
+          
+          <button id="agregar-habito-btn" class="boton-agregar">
+            <span>+</span> Agregar Hábito
+          </button>
+          
+          <div id="mensaje-felicitacion" class="hidden">
+            <span class="icono-campana">🔔</span> Hábitos Completos !
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal para agregar nota -->
+  <div id="modal-nota" class="modal">
+    <div class="modal-contenido">
+      <span class="cerrar-modal">&times;</span>
+      <h3>Nueva Nota</h3>
+      <input type="text" id="titulo" placeholder="Título de la nota">
+      <textarea id="descripcion" placeholder="Descripción de la nota"></textarea>
+      <select id="categoria">
+        <option value="" disabled selected>Selecciona una categoría</option>
+      </select>
+      <input type="text" id="nueva-categoria" placeholder="Nueva categoría (opcional)">
+      <button id="guardar-nota">Guardar Nota</button>
+    </div>
+  </div>
+
+  <!-- Modal para agregar hábito -->
+  <div id="modal-habito" class="modal">
+    <div class="modal-contenido">
+      <span class="cerrar-modal">&times;</span>
+      <h3>Nuevo Hábito</h3>
+      <input type="text" id="nuevo-habito" placeholder="Nombre del hábito">
+      <button id="guardar-habito">Guardar Hábito</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
